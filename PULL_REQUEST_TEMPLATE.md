@@ -8,7 +8,7 @@ Pais: Sonora
 
 
 ## ¿Como explicarias el proposito de este proyecto? (opcional)
-
+El propósito de este proyecto es demostrar la habilidad de resolver problemas algorítmicos utilizando JavaScript
 
 ## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
 
