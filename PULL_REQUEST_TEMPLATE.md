@@ -7,7 +7,8 @@ Ciudad: Ciudad Obregón, Son
 Pais: México
 
 ## ¿Como explicarias el proposito de este proyecto? (opcional)
-
+Lo realizan para saber si somos capaces de resolver un problema relacionado al lenguaje con el que
+se trabajara en la pasantia.
 
 
 ## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
