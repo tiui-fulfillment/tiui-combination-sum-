@@ -1,4 +1,4 @@
-import combinationSum from '../index';
+const combinationSum = require('../index');
 
 describe('combinationSum', () => {
   it('Debería encontrar todas las combinaciones con suma específica', () => {

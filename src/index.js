@@ -34,9 +34,9 @@ const combinationSumRecursive = (candidates, remainingSum, finalCombinations, cu
 
 const combinationSum = (candidates, target) => {
   candidates.sort((a, b) => a - b); // Clasificamos los candidatos para garantizar que exploremos las combinanciones en orden.
-  const finalCombinations = [];
-  combinationSumRecursive(candidates, target, finalCombinations, [], 0);
-  return combinationSumRecursive(candidates, target);
+  const result = [];
+  combinationSumRecursive(candidates, target, result, [], 0);
+  return result;
 }
 
-export default combinationSum;
+module.exports = combinationSum;
