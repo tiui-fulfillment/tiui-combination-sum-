@@ -8,7 +8,39 @@
  */
 
 const combinationSumRecursive = (
-    
+    candidates, 
+    remainingSum,
+    finalCombinations,
+    currentCombination,
+    startFrom) => {
+      //Si la suma restante es 0, encontramos una combinacion valida.
+      if(remainingSum===0){
+        finalCombinations.push([...currentCombination]);
+        return finalCombinations;
+      }
+
+      //Si la suma restante es menos de 0, no hay combinacion valida
+      if(remainingSum<0){
+        return finalCombinations;
+      }
+
+
+      for (let i=startFrom; i<candidates.length; i++){
+        currentCombination.push(candidates[i]);
+
+        //Llama a la funcion recursiva para actualizar los parametros.
+        combinationSumRecursive(
+          candidates,
+          remainingSum-candidates[i],
+          finalCombinations,
+          currentCombination,
+          i
+        );
+        //Quita el ultimo candidato, para ver las demas posibilidades.
+        currentCombination.pop();
+      }
+
+      return finalCombinations;
   }
   
   /**
@@ -19,7 +51,7 @@ const combinationSumRecursive = (
    * @return {number[][]}
    */
 const combinationSum = (candidates, target) => {
-    return combinationSumRecursive(candidates, target);
+    return combinationSumRecursive(candidates, target,[],[],0);
   }
 
 module.exports = combinationSum;
