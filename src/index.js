@@ -8,8 +8,44 @@
  */
 
 const combinationSumRecursive = (
-    
+  candidates,
+  remainingSum,
+  finalCombinations = [],
+  currentCombination = [],
+  startFrom = 0
+) => {
+  if (remainingSum === 0) {
+    finalCombinations.push([...currentCombination]);
+    return finalCombinations;
   }
+
+  if (startFrom >= candidates.length || remainingSum < 0) {
+    return finalCombinations;
+  }
+
+  currentCombination.push(candidates[startFrom]);
+
+  combinationSumRecursive(
+    candidates,
+    remainingSum - candidates[startFrom],
+    finalCombinations,
+    currentCombination,
+    startFrom // Start from doesn't change due the posibility of use the same value to complete the combination
+  );
+
+  currentCombination.pop(); // backtrack
+
+  // Explore next candidate
+  combinationSumRecursive(
+    candidates,
+    remainingSum,
+    finalCombinations,
+    currentCombination,
+    startFrom + 1
+  );
+
+  return finalCombinations;
+};
   
   /**
    * Backtracking algorithm of finding all possible combination for specific sum.
