@@ -7,19 +7,35 @@
  * @return {number[][]}
  */
 
-const combinationSumRecursive = (
-    
-  }
-  
-  /**
-   * Backtracking algorithm of finding all possible combination for specific sum.
-   *
-   * @param {number[]} candidates
-   * @param {number} target
-   * @return {number[][]}
-   */
-const combinationSum = (candidates, target) => {
-    return combinationSumRecursive(candidates, target);
+const combinationSumRecursive = (candidates, remainingSum, finalCombinations, currentCombination, startFrom) => {
+  if (remainingSum === 0) {
+    finalCombinations.push([...currentCombination]);
+    return;
   }
 
-module.exports = combinationSum;
+  for (let i = startFrom; i < candidates.length; i++) {
+    if (candidates[i] > remainingSum) {
+      continue; //Evitamos candidatos que sean mayores a remainingSum
+    }
+
+    currentCombination.push(candidates[i]);
+    combinationSumRecursive(candidates, remainingSum - candidates[i], finalCombinations, currentCombination, i);
+    currentCombination.pop();
+  }
+};
+
+/**
+ * Backtracking algorithm of finding all possible combination for specific sum.
+ *
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+const combinationSum = (candidates, target) => {
+  candidates.sort((a, b) => a - b); // Clasificamos los candidatos para garantizar que exploremos las combinanciones en orden.
+  const finalCombinations = [];
+  combinationSumRecursive(candidates, target, finalCombinations, [], 0);
+  return combinationSumRecursive(candidates, target);
+}
+
+export default combinationSum;
