@@ -7,9 +7,25 @@
  * @return {number[][]}
  */
 
-const combinationSumRecursive = (
-    
+const combinationSumRecursive = (candidates, remainingSum, finalCombinations, currentCombination, startFrom) => {
+  // Si la suma restante es cero, quiere decir que hay una combinación válida.
+  if (remainingSum === 0) {
+    finalCombinations.push([...currentCombination]);
+    return;
   }
+
+  //Si la suma restante se vuelve negativa, se finaliza el proceso
+  if (remainingSum < 0) {
+    return;
+  }
+
+  for (let i = startFrom; i < candidates.length; i++) {
+    const candidate = candidates[i];
+    currentCombination.push(candidate);
+    combinationSumRecursive(candidates, remainingSum - candidate, finalCombinations, currentCombination, i);
+    currentCombination.pop();
+  }
+}
   
   /**
    * Backtracking algorithm of finding all possible combination for specific sum.
@@ -19,7 +35,9 @@ const combinationSumRecursive = (
    * @return {number[][]}
    */
 const combinationSum = (candidates, target) => {
-    return combinationSumRecursive(candidates, target);
-  }
+  const finalCombinations = [];
+  combinationSumRecursive(candidates, target, finalCombinations, [], 0);
+  return finalCombinations;
+}
 
 module.exports = combinationSum;
