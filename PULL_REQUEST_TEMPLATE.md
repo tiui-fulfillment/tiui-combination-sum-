@@ -1,6 +1,6 @@
 ## DESCRIPTION
 
-Nombre: Eder Cadena
+Nombre: Eder Cadena 
 Email: eder.cadena@gmail.com
 WhatsApp: 2941258694
 Ciudad: Xalapa, Veracruz
@@ -11,7 +11,7 @@ Pais: México
 
 ## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
 
-MySQl
+MySQL
 Photoshop
 HTML5
 CSS3
