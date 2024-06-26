@@ -5,7 +5,7 @@
  * @param {number[]} currentCombination - currently explored candidates.
  * @param {number} startFrom - index of the candidate to start further exploration from.
  * @return {number[][]}
- */
+*/
 
 const combinationSumRecursive = (candidates, remainingSum, finalCombinations, currentCombination, startFrom) => {
   if (remainingSum === 0) {
@@ -30,7 +30,8 @@ const combinationSumRecursive = (candidates, remainingSum, finalCombinations, cu
  * @param {number[]} candidates
  * @param {number} target
  * @return {number[][]}
- */
+*/
+
 const combinationSum = (candidates, target) => {
   candidates.sort((a, b) => a - b); // Clasificamos los candidatos para garantizar que exploremos las combinanciones en orden.
   const finalCombinations = [];
