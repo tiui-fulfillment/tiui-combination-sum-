@@ -7,9 +7,27 @@
  * @return {number[][]}
  */
 
-const combinationSumRecursive = (
-    
+const combinationSumRecursive = (candidates, target) => {
+  const finalList = [];
+  
+  function validateSum (index, target, currentList){
+    if (target == 0){
+      finalList.push([...currentList]);
+      return;
+    }
+
+    for(let i = index; i < candidates.length ; i++){
+      if(candidates[i] <= target){
+        currentList.push(candidates[i]);
+        validateSum(i, target - candidates[i], currentList);
+        currentList.pop()
+      }
+    }
   }
+
+  validateSum(0,target,[])
+  return finalList;
+}
   
   /**
    * Backtracking algorithm of finding all possible combination for specific sum.
