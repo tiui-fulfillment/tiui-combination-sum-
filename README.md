@@ -46,6 +46,10 @@ npm run test
 ## RETO
 Crea una función que encuentre todas las combinaciones específicas sumando los números candidatos para obtener el número objetivo.
 
+## Respuesta del reto
+
+Suponiendo que el arreglo está ordenado (todos los casos de ejemplo lo están), se hace una función recursiva que toma el primer elemento, lo pone en un array y calcula qué complemento necesita para que al sumarse el resultado sea target. Después de eso nuevamente empieza a recorrer el array buscando combinaciones que den el complemento (ya no el target). Cuando el complemento es 0, la combinación da target así que se agrega a un array combinations y se continúa eliminando el último elemento (algo así como mirar rama por rama qué sirve). Si el elemento que sigue es mayor al complemento necesario, se descarta esa suma y todas las que siguen, porque al ser todas mayores, ninguna dará la suma. Cuando ya se hayan explorado o descartado todas las ramas, se retorna el array con las combinaciones posibles, y para evitar repeticiones, se buscan sumas siempre hacia adelante del array, nunca hacia atrás (esto funciona porque también se supone que el array de candidatos no tiene números repetidos)
+
 ## Enviar solución de reto
 Debes hacer un "Fork" de este proyecto, resolver los problemas y crear un Pull Request hacia este repositorio.
 
