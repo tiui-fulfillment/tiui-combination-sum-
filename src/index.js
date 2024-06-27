@@ -8,7 +8,32 @@
  */
 
 const combinationSumRecursive = (
-    
+  candidates,
+  remainingSum,
+  finalCombinations = [],
+  currentCombination = [],
+  startFrom = 0
+) => {
+  if (remainingSum === 0) {
+    finalCombinations.push([...currentCombination]);
+    return finalCombinations;
+  }
+
+  for (let i = startFrom; i < candidates.length; i++) {
+    if (candidates[i] > remainingSum) break;
+
+    currentCombination.push(candidates[i]);
+    combinationSumRecursive(
+      candidates,
+      remainingSum - candidates[i],
+      finalCombinations,
+      currentCombination,
+      i // Permite reutilizar el mismo número
+    );
+    currentCombination.pop();
+  }
+
+  return finalCombinations;
   }
   
   /**
