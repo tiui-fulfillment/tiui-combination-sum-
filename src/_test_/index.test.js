@@ -1,4 +1,4 @@
-const combinationSum = require ('../index');
+const combinationSum = require('../index');
 
 describe('combinationSum', () => {
   it('Debería encontrar todas las combinaciones con suma específica', () => {
@@ -20,5 +20,19 @@ describe('combinationSum', () => {
     expect(combinationSum([2, 5], 3)).toEqual([]);
 
     expect(combinationSum([], 3)).toEqual([]);
+
+    // No valid combinations avalaible.
+    expect(combinationSum([2, 4, 6], 7)).toEqual([]);
+
+    // Set with only target.
+    expect(combinationSum([7], 7)).toEqual([[7]]);
+
+    // Try with duplicated candidate values.
+    expect(combinationSum([1, 2, 2, 3], 4)).toEqual([
+      [1, 1, 1, 1],
+      [1, 1, 2],
+      [1, 3],
+      [2, 2],
+    ]);
   });
 });
