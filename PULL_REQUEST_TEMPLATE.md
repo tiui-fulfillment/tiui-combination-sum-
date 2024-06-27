@@ -10,4 +10,4 @@ Pais: Mexico
 Realizar una evaluacion a los postulantes de la vacantes, para evaluar sus skills y su capacidad de resolucion de problemas en un ejemplo como este, implementando un algoritmo de backtracking.
 
 ## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
-El MERN stack, su popularidad y soporte comunitario lo convierten en una excelente opción para muchos proyectos
+El MERN stack, su popularidad y soporte comunitario lo convierten en una excelente opción para muchos proyectos.
