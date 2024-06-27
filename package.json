@@ -20,5 +20,8 @@
     "transformIgnorePatterns": [
       "<rootDir>/(node_modules)/"
     ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
