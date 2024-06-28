@@ -4,22 +4,36 @@
  * @param {number[][]} finalCombinations - resulting list of combinations.
  * @param {number[]} currentCombination - currently explored candidates.
  * @param {number} startFrom - index of the candidate to start further exploration from.
+ * @return {void}
+ */
+const combinationSumRecursive = (candidates, remainingSum, finalCombinations, currentCombination, startFrom) => {
+  if (remainingSum === 0) {
+    finalCombinations.push([...currentCombination]);
+    return;
+  }
+
+  if (remainingSum < 0) {
+    return;
+  }
+
+  for (let i = startFrom; i < candidates.length; i++) {
+    currentCombination.push(candidates[i]);
+    combinationSumRecursive(candidates, remainingSum - candidates[i], finalCombinations, currentCombination, i);
+    currentCombination.pop();
+  }
+};
+
+/**
+ * Backtracking algorithm of finding all possible combinations for a specific sum.
+ *
+ * @param {number[]} candidates
+ * @param {number} target
  * @return {number[][]}
  */
-
-const combinationSumRecursive = (
-    
-  }
-  
-  /**
-   * Backtracking algorithm of finding all possible combination for specific sum.
-   *
-   * @param {number[]} candidates
-   * @param {number} target
-   * @return {number[][]}
-   */
 const combinationSum = (candidates, target) => {
-    return combinationSumRecursive(candidates, target);
-  }
+  const finalCombinations = [];
+  combinationSumRecursive(candidates, target, finalCombinations, [], 0);
+  return finalCombinations;
+};
 
 module.exports = combinationSum;
