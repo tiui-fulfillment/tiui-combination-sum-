@@ -1,13 +1,7 @@
 ## DESCRIPTION
 
-Nombre:
-Email:
-WhatsApp:
-Ciudad:
-Pais:
-
-## ¿Como explicarias el proposito de este proyecto? (opcional)
-
-
-## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
-
+Nombre: Fernando Zamorano
+Email: SoyFerxd@proton.me
+WhatsApp: 6861072811
+Ciudad: Mexicali
+Pais: México
