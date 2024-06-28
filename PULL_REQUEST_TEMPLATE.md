@@ -8,7 +8,7 @@ Pais: México
 
 ## ¿Como explicarias el proposito de este proyecto? (opcional)
 Es un reto algoritmico enfocado a seguir instrucciones y prestar atención, ya que ya se dan los "ingredientes de la receta".
-También aplica el uso de la recursividad para el control de los limites y comportamiento del algoritmo.
+También aplica el uso de la recursividad y el backtracking para el control de los limites y comportamiento del algoritmo.
 
 ## ¿Cuál es tu stack tecnológico preferido? ¿Por qué? (opcional)
 No tengo un stack tecnológico preferido, ya que considero que cada uno tiene sus ventajas y desventajas, y todos son interesantes desde diferentes perspectivas.
